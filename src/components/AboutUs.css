@@ -1,0 +1,216 @@
+.about {
+    margin: 50px 0;
+}
+
+.about-restautant {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-restautant-left {
+    width: 60%;
+}
+
+.about-restautant-left img {
+    max-width: 549px;
+    width: 100%;
+}
+
+.about-restautant-right {
+    width: 40%;
+}
+
+.about-restautant-right-h1 {
+    max-width: 360px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    font-size: 80px;
+}
+
+.about-restautant-right h1 span {
+    color: #FF8A00;
+    font-family: 'Tinos', serif;
+}
+
+.about-restautant-right p {
+    max-width: 424px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #5C4529;
+    /* line-height: 40px; */
+}
+
+.about-restautant-right-img {
+    width: 100%;
+    display: none;
+    margin: 30px auto;
+    max-width: 346px;
+}
+
+.about-sed {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-sed-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.about-sed-left img {
+    width: 100%;
+}
+
+.aboutSedH {
+    display: none;
+}
+
+.about-own {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 100px auto;
+}
+
+.about-own-left {
+    width: 30%;
+}
+
+.about-own-left img {
+    width: 100%;
+}
+
+.about-own-right{
+    width: 50%;
+    text-align: center;
+}
+
+.about-own-right h1 {
+    font-size: 60px;
+}
+
+.about-restautant-right-h1 span{
+    color: #FF8A00;
+    font-family: 'Tinos', serif;
+}
+
+.about-own-right h3{
+    font-weight: 600;
+    font-size: 40px;
+    color: #000000;
+    margin: 20px 0;
+}
+
+.about-own-right p{
+    color: #5C4529;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    max-width: 495px;
+}
+
+.about-own-hH1{
+    display: none;
+}
+
+@media(max-width: 967px) {
+
+    .about-restautant-right-h1 {
+        font-size: 50px;
+    }
+
+    .about-own-left {
+        width: 70%;
+        /* background-color: red; */
+    }
+
+    .about-own-right{
+        width: 100%;
+    }
+
+    .about-own-left img{
+        border-radius: 22px;
+    }
+
+    .about-sed-left{
+        width: 70%;
+    }
+
+    .about-restautant-right p {
+        font-size: medium;
+    }
+
+    .about-own-hH1{
+        display: block;
+    }
+
+    .about-own-right-h1{
+        display: none;
+    }
+
+    .about-own-right h3{
+        font-size: 20px;
+    }
+
+    .about-own-right p{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 967px) {
+    .about-restautant {
+        flex-direction: column;
+    }
+
+    .about-restautant-left {
+        display: none;
+    }
+
+    .about-own{
+        flex-direction: column;
+    }
+
+    .about-restautant-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-restautant-right-img {
+        display: block;
+    }
+
+    .about-restautant-right p {
+        margin: 0 auto;
+    }
+
+    .about-restautant-right-h1 {
+        font-size: 40px;
+        margin: 0 auto;
+    }
+
+    .about-sed {
+        flex-direction: column;
+        margin: 50px auto;
+    }
+
+    .aboutSedNH {
+        display: none;
+    }
+
+    .aboutSedH {
+        display: block;
+    }
+
+}
