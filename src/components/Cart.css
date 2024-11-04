@@ -1,0 +1,145 @@
+/* Container for the order list */
+.order-list-container {
+    width: 300px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.order-list-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d2f88;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Item list styling */
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.order-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.quantity-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.order-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-item-remove {
+    font-size: 20px;
+    color: #ff4d4d;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.order-item-remove:hover {
+    color: #ff0000;
+}
+
+/* Voucher and totals */
+.voucher-code {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.voucher-code input {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 5px 10px;
+    width: 70%;
+}
+
+.voucher-code button {
+    background-color: #5d2f88;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.voucher-code button:hover {
+    background-color: #512982;
+}
+
+/* Totals section */
+.totals {
+    margin-top: 20px;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.total-item-total {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Checkout button */
+.checkout-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.checkout-btn:hover {
+    background-color: #00b04f;
+}

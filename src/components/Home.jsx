@@ -9,7 +9,7 @@ import HomeResRec from '../assets/HomeResRec.png'
 import HomeReserveS1 from '../assets/HomeReserveS1.png'
 import HomeReserveS2 from '../assets/HomeReserveS2.png'
 
-function Home() {
+function Home({addItemToCart, NotifySucces}) {
 
     const chefs = [
         { name: 'Betran Komar', level: 'Head chef', img: require('../assets/homeChefBetran.png') },
@@ -62,7 +62,7 @@ function Home() {
 
             <div className="wrap-menu-items">
                 <h1 className='hero-our-h1'>Our popular menu</h1>
-                <MenuItems itemsPerPage={6} />
+                <MenuItems itemsPerPage={6} addItemToCart={addItemToCart} NotifySucces={NotifySucces}/>
 
             </div>
 

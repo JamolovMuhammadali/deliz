@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import LoginRight from '../assets/loginRight.png'
 import { auth } from "./firebase";
 
-function ResetPassword() {
+function ResetPassword({NotifySucces, NotifyError}) {
 
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
@@ -15,9 +15,11 @@ function ResetPassword() {
     e.preventDefault();
     try {
       await sendPasswordResetEmail(auth, email);
-      alert("Password reset email sent!");
+      // alert("Password reset email sent!");
+      NotifySucces();
     } catch (error) {
       setError(error.message);
+      NotifyError();
     }
   };
 

@@ -64,18 +64,18 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home addItemToCart={addItemToCart} NotifySucces={NotifySucces} />} />
           <Route path='/login' element={<Login NotifyError={NotifyError} NotifySucces={NotifySucces} />} />
           <Route path='/signup' element={<Signup NotifyError={NotifyError} NotifySucces={NotifySucces} />} />
-          <Route path='/resetPassword' element={<ResetPassword />} />
+          <Route path='/resetPassword' element={<ResetPassword NotifySucces={NotifySucces} NotifyError={NotifyError} />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/reservation' element={<Reservation />} />
           <Route path='/contact' element={<Contact NotifySucces={NotifySucces} />} />
           <Route path='/orderonline' element={<OrderOnline NotifySucces={NotifySucces} addItemToCart={addItemToCart} />} />
-          <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
+          <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} addItemToCart={addItemToCart} NotifySucces={NotifySucces} />} />
           <Route path='/checkout' element={<Checkout cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>addItemToCart
       <ToastContainer />
     </div>
   );
