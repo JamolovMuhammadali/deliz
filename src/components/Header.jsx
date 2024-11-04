@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import '../components/Header.css'
+import '../components/Header.css';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const location = useLocation(); // Hook to get the current route
     const cartItems = 3;
 
     const toggleMenu = () => {
@@ -21,12 +22,48 @@ function Header() {
             </Link>
 
             <div className={`header-links ${menuOpen ? 'show' : ''}`}>
-                <Link to='/' onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link to='/About' onClick={() => setMenuOpen(false)}>About us</Link>
-                <Link to='/OrderOnline' onClick={() => setMenuOpen(false)}>Order online</Link>
-                <Link to='/Reservation' onClick={() => setMenuOpen(false)}>Reservation</Link>
-                <Link to='/Contact' onClick={() => setMenuOpen(false)}>Contact us</Link>
-                <Link to='/checkout' onClick={() => setMenuOpen(false)}>Checkout</Link>
+                <Link 
+                    to='/' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/' ? 'active-link' : ''}
+                >
+                    Home
+                </Link>
+                <Link 
+                    to='/About' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/About' ? 'active-link' : ''}
+                >
+                    About us
+                </Link>
+                <Link 
+                    to='/OrderOnline' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/OrderOnline' ? 'active-link' : ''}
+                >
+                    Order online
+                </Link>
+                <Link 
+                    to='/Reservation' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/Reservation' ? 'active-link' : ''}
+                >
+                    Reservation
+                </Link>
+                <Link 
+                    to='/Contact' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/Contact' ? 'active-link' : ''}
+                >
+                    Contact us
+                </Link>
+                <Link 
+                    to='/checkout' 
+                    onClick={() => setMenuOpen(false)} 
+                    className={location.pathname === '/checkout' ? 'active-link' : ''}
+                >
+                    Checkout
+                </Link>
             </div>
 
             <div className="header-counter-button">
@@ -43,7 +80,10 @@ function Header() {
                     <button>Login</button>
                 </Link>
 
-                <div className={`header-counter-button-rectangles ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div 
+                    className={`header-counter-button-rectangles ${menuOpen ? 'open' : ''}`} 
+                    onClick={toggleMenu}
+                >
                     <div className="header-counter-button-rectangle"></div>
                     <div className="header-counter-button-rectangle"></div>
                     <div className="header-counter-button-rectangle"></div>

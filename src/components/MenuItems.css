@@ -152,6 +152,10 @@
     .hero-our-h1 {
         font-size: 50px;
     }
+
+    .menu-list{
+        width: 90%;
+    }
 }
 
 @media (max-width: 667px) {
