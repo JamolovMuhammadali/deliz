@@ -1,26 +1,25 @@
-import React from 'react'
-import './Checkout.css'
-import Header from './Header'
-import Footer from './Footer'
+import React from 'react';
+import './Checkout.css';
+import Header from './Header';
+import Footer from './Footer';
 import { FaAngleLeft } from "react-icons/fa6";
 
-function checkout() {
+function Checkout() {
   return (
     <div className='wrap-checkout'>
       <Header />
       <div className="checkout">
 
         <div className="checkout-title">
-          <button className="checkout-back"><FaAngleLeft />
-          </button>
+          <button className="checkout-back"><FaAngleLeft /></button>
           <h1>Checkout</h1>
           <div className="checkout-hidden-btn"></div>
         </div>
 
-        <div className="checkout-adress">
+        <div className="checkout-address">
           <h2>Shipping address</h2>
-          <form className='checkout-adress-form'>
-            <input placeholder='Your Adress...' type="text" />
+          <form className='checkout-address-form'>
+            <input placeholder='Your Address...' type="text" />
             <button>Change</button>
           </form>
         </div>
@@ -28,65 +27,65 @@ function checkout() {
         <div className="checkout-data">
           <h2>Order data</h2>
 
-          <form class="order-form">
+          <form className="order-form">
 
-            <div class="form-row">
-              <input type="text" name="firstName" placeholder="First name" class="form-input" />
-              <input type="text" name="lastName" placeholder="Last name" class="form-input" />
+            <div className="form-row">
+              <input type="text" name="firstName" placeholder="First name" className="form-input" />
+              <input type="text" name="lastName" placeholder="Last name" className="form-input" />
             </div>
 
-            <div class="form-row">
-              <input type="text" name="phoncreateeNumber" placeholder="Phone number" class="form-input" />
-              <input type="email" name="email" placeholder="Email address" class="form-input" />
+            <div className="form-row">
+              <input type="text" name="phoneNumber" placeholder="Phone number" className="form-input" />
+              <input type="email" name="email" placeholder="Email address" className="form-input" />
             </div>
 
-            <textarea name="note" placeholder="Note" class="form-textarea"></textarea>
+            <textarea name="note" placeholder="Note" className="form-textarea"></textarea>
 
-            <h3 class="section-title">Order time</h3>
-            <div class="radio-group">
-              <label class="radio-label">
+            <h3 className="section-title">Order time</h3>
+            <div className="radio-group">
+              <label className="radio-label">
                 <input type="radio" name="orderTime" value="now" /> Order now
               </label>
-              <label class="radio-label">
+              <label className="radio-label">
                 <input type="radio" name="orderTime" value="later" /> Order later
               </label>
             </div>
 
-            <h3 class="section-title">Order method</h3>
-            <div class="radio-group">
-              <label class="radio-label">
+            <h3 className="section-title">Order method</h3>
+            <div className="radio-group">
+              <label className="radio-label">
                 <input type="radio" name="orderMethod" value="delivery" /> Delivery
               </label>
-              <label class="radio-label">
+              <label className="radio-label">
                 <input type="radio" name="orderMethod" value="takeaway" /> Take away
               </label>
             </div>
 
-            <h3 class="section-title">Payment method</h3>
-            <div class="grid">
-              <label class="radio-label">
-                <input type="radio" name="paymentMethod" value="cashOnDelivery" />  Cash On Delivery
+            <h3 className="section-title">Payment method</h3>
+            <div className="grid">
+              <label className="radio-label">
+                <input type="radio" name="paymentMethod" value="cashOnDelivery" /> Cash On Delivery
               </label>
-              <label class="radio-label">
-                <input type="radio" name="paymentMethod" value="virtualAccount" />  BCA Virtual Account
+              <label className="radio-label">
+                <input type="radio" name="paymentMethod" value="virtualAccount" /> BCA Virtual Account
               </label>
-              <label class="radio-label">
-                <input type="radio" name="paymentMethod" value="creditCard" />     Credit Card
+              <label className="radio-label">
+                <input type="radio" name="paymentMethod" value="creditCard" /> Credit Card
               </label>
-              <label class="radio-label">
+              <label className="radio-label">
                 <input type="radio" name="paymentMethod" value="transferBank" /> Transfer Bank
               </label>
             </div>
 
-            <div class="checkbox-container">
-              <label class="checkbox-label">
+            <div className="checkbox-container">
+              <label className="checkbox-label">
                 <input type="checkbox" name="agreeToTerms" />
                 Choose to indicate that you have read and agree to our Terms of use & Privacy Policy.
               </label>
             </div>
 
             <div className="order-form-wrap-btn">
-              <button type="submit" class="submit-button">Order now</button>
+              <button type="submit" className="submit-button">Order now</button>
             </div>
           </form>
 
@@ -95,7 +94,7 @@ function checkout() {
       </div>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default checkout
+export default Checkout;

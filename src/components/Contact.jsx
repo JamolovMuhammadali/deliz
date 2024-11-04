@@ -2,17 +2,15 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import '../components/Contact.css'
-import Alert from './Alert'
 // import { useNavigate } from "react-router-dom";
 
 
 
-function Contact() {
+function Contact({NotifySucces}) {
 
     const [error, setError] = useState(null);
     // const navigate = useNavigate();
-    const [showSuccessAlert, setShowSuccessAlert] = useState(false);
-    const [showErrorAlert, setShowErrorAlert] = useState(false);
+
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -31,10 +29,9 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        setShowSuccessAlert(true);
+        NotifySucces();
         const message = `
-          New Contact Form Submission:
+          Delizi Contact Form Submission:
           - First Name: ${formData.firstName}
           - Last Name: ${formData.lastName}
           - Email: ${formData.email}
@@ -78,8 +75,6 @@ function Contact() {
     return (
         <div className='wrap-contact'>
             <Header />
-            {showSuccessAlert && <Alert message="Success!" showAlert={showSuccessAlert} />}
-            {showErrorAlert && <Alert message={error} showAlert={showErrorAlert} />}
             <div className="contact">
                 <h1>Contact us</h1>
                 <p>We love hearing from our customers. Feel free to share your experience or ask any questions you may have.</p>

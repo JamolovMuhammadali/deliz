@@ -6,13 +6,13 @@ import googleImg from '../assets/google.png'
 import { useNavigate } from "react-router-dom";
 import { auth } from './firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import Alert from '../components/Alert'
+// import Alert from '../components/Alert'
 
 
 
 
 
-function Login() {
+function Login({NotifyError, NotifySucces}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,15 +25,13 @@ function Login() {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            setShowSuccessAlert(true); // Trigger success alert
-            setShowErrorAlert(false); // Hide error alert
+            NotifySucces()
             setTimeout(() => {
-                navigate("/"); // Navigate after a delay
+                navigate("/");
             }, 3000);
         } catch (error) {
             setError(error.message);
-            setShowErrorAlert(true); // Trigger error alert
-            setShowSuccessAlert(false); // Hide success alert
+            NotifyError();
         }
     };
 
@@ -43,27 +41,21 @@ function Login() {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log('Google User:', user);
-            setShowSuccessAlert(true); // Trigger success alert
-            setShowErrorAlert(false); // Hide error alert
+            NotifySucces()
             setTimeout(() => {
-                navigate("/"); // Navigate after a delay
+                navigate("/");
             }, 3000);
             console.log(user);
 
         } catch (error) {
             setError(error.message);
-            setShowErrorAlert(true); // Trigger error alert
-            setShowSuccessAlert(false); // Hide success alert
+            NotifyError()
         }
     };
 
     return (
         <div className='login'>
             <div className="login-left">
-                {/* Show success or error alert */}
-                {showSuccessAlert && <Alert message="You have successfully signed up!" showAlert={showSuccessAlert} />}
-                {showErrorAlert && <Alert message={error} showAlert={showErrorAlert} />} {/* Show error alert */}
-
                 <div className="login-left-circle-wrap">
                     <Link to='/'>
                         <div className="login-left-circle">

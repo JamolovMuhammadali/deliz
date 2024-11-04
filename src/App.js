@@ -12,8 +12,6 @@ import Contact from './components/Contact';
 import OrderOnline from './components/Orderonline';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
-// import Alert from '../components/Alert'
-import Alert from './components/Alert';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,27 +23,28 @@ function App() {
   const addItemToCart = (item) => {
     console.log('Adding item to cart:', item);
     setCartItems([...cartItems, item]);
-    setShowSuccessAlert(true); // Trigger success alert
+    setShowSuccessAlert(true);
     };
 
     const NotifySucces = () => {
-      // toast.error("error", {
-      //     position: "top-center"
-      //   });
-        
         toast.success("Success!!!", {
           position: "top-right"
         });
         
     };
 
-  // Load cart from localStorage
+    const NotifyError = () => {
+      toast.error("error", {
+          position: "top-right"
+        });
+    }
+
   useEffect(() => {
     const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(savedCartItems);
   }, []);
 
-  // Save cart to localStorage
+
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
@@ -66,13 +65,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-          {/* <Route path='/menu' element={<MenuItems addItemToCart={addItemToCart}/>} /> */}
+          <Route path='/login' element={<Login NotifyError={NotifyError} NotifySucces={NotifySucces} />} />
+          <Route path='/signup' element={<Signup NotifyError={NotifyError} NotifySucces={NotifySucces} />} />
           <Route path='/resetPassword' element={<ResetPassword />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/reservation' element={<Reservation />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path='/contact' element={<Contact NotifySucces={NotifySucces} />} />
           <Route path='/orderonline' element={<OrderOnline NotifySucces={NotifySucces} addItemToCart={addItemToCart} />} />
           <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
           <Route path='/checkout' element={<Checkout cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
