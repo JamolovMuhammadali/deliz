@@ -82,6 +82,8 @@
 .checkout-address-form {
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -94,13 +96,13 @@
 }
 
 .checkout-address-form input {
-    width: 90%;
+    width: 80%;
     background-color: #D0CCC7;
     border-radius: 8px;
 }
 
 .checkout-address-form button {
-    width: 10%;
+    /* width: 10%; */
     cursor: pointer;
     background-color: #749FE0;
     color: white;
@@ -224,10 +226,6 @@
     .checkout-address-form input {
         width: 85%;
     }
-
-    .checkout-address-form button {
-        width: 15%;
-    }
 }
 
 @media (max-width: 567px) {
@@ -258,11 +256,6 @@
     .form-textarea,
     .submit-button {
         width: 100%;
-        padding: 10px;
-    }
-
-    .checkout-address-form input,
-    .checkout-address-form button {
         padding: 10px;
     }
 
