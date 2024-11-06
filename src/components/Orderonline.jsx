@@ -5,10 +5,10 @@ import Footer from './Footer'
 import MenuItems from './MenuItems'
 
 
-function Orderonline({addItemToCart,NotifySucces}) {
+function Orderonline({addItemToCart,NotifySucces, cartItems}) {
     return (
         <div className="order">
-            <Header />
+            <Header cartItems={cartItems}/>
             <h1 className='order-title'>Menu</h1>
             <MenuItems itemsPerPage={6} NotifySucces={NotifySucces} addItemToCart={addItemToCart} />
             <Footer />

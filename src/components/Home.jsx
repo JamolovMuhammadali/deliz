@@ -9,7 +9,7 @@ import HomeResRec from '../assets/HomeResRec.png'
 import HomeReserveS1 from '../assets/HomeReserveS1.png'
 import HomeReserveS2 from '../assets/HomeReserveS2.png'
 
-function Home({addItemToCart, NotifySucces}) {
+function Home({addItemToCart, NotifySucces, cartItems}) {
 
     const chefs = [
         { name: 'Betran Komar', level: 'Head chef', img: require('../assets/homeChefBetran.png') },
@@ -27,7 +27,7 @@ function Home({addItemToCart, NotifySucces}) {
 
     return (
         <div className='home'>
-            <Header />
+            <Header cartItems={cartItems} />
 
             <div className="home-hero-italian">
                 <div className="home-hero-italian-left">

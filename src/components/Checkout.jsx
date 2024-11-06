@@ -4,10 +4,10 @@ import Header from './Header';
 import Footer from './Footer';
 import { FaAngleLeft } from "react-icons/fa6";
 
-function Checkout() {
+function Checkout({cartItems}) {
   return (
     <div className='wrap-checkout'>
-      <Header />
+      <Header cartItems={cartItems} />
       <div className="checkout">
 
         <div className="checkout-title">

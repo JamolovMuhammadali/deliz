@@ -89,7 +89,7 @@
     font-size: 10px;
 }
 
-.header-counter-button button {
+.header-counter-button-button {
     width: 112px;
     padding: 10px 20px;
     border-radius: 133px;
@@ -100,7 +100,7 @@
     transition: background-color 0.3s ease;
 }
 
-.header-counter-button button:hover {
+.header-counter-button-button:hover {
     background-color: #2e8b25;
 }
 
@@ -160,6 +160,94 @@
     color: white;
 }
 
+/* sidebar ================================ */
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hide the sidebar initially */
+    transition: left 0.3s ease;
+    /* padding: 20px; */
+    z-index: 10;
+    padding: 50px;
+  }
+  
+  /* Open the sidebar by changing its 'left' property */
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-link{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-link a{
+    padding: 20px;
+    border: 1px solid #FF8A00;
+    margin: 10px;
+    color: #FF8A00;
+  }
+
+/* From Uiverse.io by vinodjangid07 */ 
+.setting-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #FF8A00;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    display: none;
+    /* box-shadow: 0px 0px 0px 2px rgb(212, 209, 255); */
+  }
+  .bar {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 2px;
+  }
+  .bar::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    background-color: rgb(126, 117, 255);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 5px white;
+  }
+  .bar1::before {
+    transform: translateX(-4px);
+  }
+  .bar2::before {
+    transform: translateX(4px);
+  }
+  .setting-btn:hover .bar1::before {
+    transform: translateX(4px);
+  }
+  .setting-btn:hover .bar2::before {
+    transform: translateX(-4px);
+  }
+  
+  .setting-btn:hover{
+    background-color: #ff941a;
+  }
+
 
 @media (max-width: 1200px) {
     .header {
@@ -184,25 +272,17 @@
         display: none;
     }
 
-    .header-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: white;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        border-radius: 5px;
-        transform: translateY(-20px);
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+    .setting-btn{
+        display: flex !important;
     }
 
-    .header-links.show {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
+    .sidebar-link{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .header-links {
+        display: none;
     }
 
     .header-links a {

@@ -7,10 +7,10 @@ import './AboutUs.css'
 import AboutOwnerImg from '../assets/AboutOwner.png'
 
 
-function AboutUs() {
+function AboutUs({cartItems}) {
     return (
         <div className='wrap-about'>
-            <Header />
+            <Header cartItems={cartItems}/>
             <div className="about">
 
                 <div className="about-restautant">

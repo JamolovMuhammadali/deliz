@@ -29,7 +29,7 @@ function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
 
   return (
     <div className="cart-container">
-      <Header />
+      <Header cartItems={cartItems} />
       <div className="wrap-cart-menu-order">
         <div className="wrap-order">
           <div className="cart-container-title">

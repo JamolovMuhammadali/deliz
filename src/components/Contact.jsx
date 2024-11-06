@@ -6,7 +6,7 @@ import '../components/Contact.css'
 
 
 
-function Contact({NotifySucces}) {
+function Contact({NotifySucces,cartItems}) {
 
     const [error, setError] = useState(null);
     // const navigate = useNavigate();
@@ -74,7 +74,7 @@ function Contact({NotifySucces}) {
 
     return (
         <div className='wrap-contact'>
-            <Header />
+            <Header cartItems={cartItems}/>
             <div className="contact">
                 <h1>Contact us</h1>
                 <p>We love hearing from our customers. Feel free to share your experience or ask any questions you may have.</p>

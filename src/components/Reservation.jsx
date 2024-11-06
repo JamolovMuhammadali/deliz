@@ -13,7 +13,7 @@ import { CiSquareCheck } from "react-icons/ci";
 import { FaEdit } from "react-icons/fa";
 
 
-function Reservation() {
+function Reservation({cartItems}) {
   const [selectedDate, setSelectedDate] = useState(null);
   const [Reshidden, setReshidden] = useState(false);
   const [selectedTime, setSelectedTime] = useState('04:30'); // Default time
@@ -75,7 +75,7 @@ function Reservation() {
 
   return (
     <div className='wrap-reservation'>
-      <Header />
+      <Header cartItems={cartItems} />
       <div className="reservation">
         <div className="reservation-left">
           <img src={reservationLeftImg} alt="Reservation" />
