@@ -29,22 +29,26 @@ function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
 
   return (
     <div className="cart-container">
-      <Header/>
+      <Header />
       <div className="wrap-cart-menu-order">
-        <MenuItems addItemToCart={addItemToCart} NotifySucces={NotifySucces} />
         <div className="wrap-order">
           <div className="cart-container-title">
             <h1>Order List</h1>
           </div>
           {cartItems.length === 0 ? (
-            <h1>Your cart is empty</h1>
+            <div className="empty-cart-message">
+              <h1>Your cart is empty</h1>
+              <p>Looks like you haven’t added anything to your cart yet.</p>
+            </div>
           ) : (
-            <ul>
+            <ul className="wrap-order-ul">
               {cartItems.map((item, index) => (
                 <li key={index}>
-                  <span>{item.name} - {item.price}</span>
-                  <img src={item.image} alt="error in cart" />
-                  <button 
+                  <b>{item.name}</b>
+                  <span>{item.price}</span>
+                  <img className="wrap-order-ul-img" src={item.image} alt="error in cart" />
+                  <button
+                    className="wrap-order-remove-btn"
                     onClick={() => requestRemoveItem(index)} // Request confirmation
                   >
                     Remove
@@ -56,13 +60,13 @@ function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
         </div>
       </div>
       {showPrompt && (
-        <Prompt 
-          message="Are you sure you want to remove this item from the cart?" 
-          onConfirm={handleConfirm} 
-          onCancel={handleCancel} 
+        <Prompt
+          message="Are you sure you want to remove this item from the cart?"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
         />
       )}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

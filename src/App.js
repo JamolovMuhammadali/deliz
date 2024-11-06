@@ -75,7 +75,7 @@ function App() {
           <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} addItemToCart={addItemToCart} NotifySucces={NotifySucces} />} />
           <Route path='/checkout' element={<Checkout cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
         </Routes>
-      </BrowserRouter>addItemToCart
+      </BrowserRouter>
       <ToastContainer />
     </div>
   );
