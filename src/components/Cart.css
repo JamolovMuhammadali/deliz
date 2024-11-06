@@ -14,10 +14,25 @@
     margin: 0 auto;
 }
 
+.wrap-order-ul{
+    margin: 20px 0;
+}
+
 .wrap-order-ul li {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid gray;
+    padding: 15px 30px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.wrap-order-ul li:hover {
+    background-color: #FF8A00;
+    color: white;
+    border-color: #FF8A00;
 }
 
 .wrap-order-ul b {
