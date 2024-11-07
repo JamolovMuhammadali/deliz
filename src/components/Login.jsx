@@ -16,11 +16,7 @@ function Login({NotifyError, NotifySucces}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const [showSuccessAlert, setShowSuccessAlert] = useState(false); // For success alert
-    const [showErrorAlert, setShowErrorAlert] = useState(false); // For error alert
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -30,7 +26,6 @@ function Login({NotifyError, NotifySucces}) {
                 navigate("/");
             }, 3000);
         } catch (error) {
-            setError(error.message);
             NotifyError();
         }
     };
@@ -48,7 +43,6 @@ function Login({NotifyError, NotifySucces}) {
             console.log(user);
 
         } catch (error) {
-            setError(error.message);
             NotifyError()
         }
     };

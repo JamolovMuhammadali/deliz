@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Cart.css';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import MenuItems from './MenuItems.jsx';
+// import MenuItems from './MenuItems.jsx';
 import Prompt from './Prompt.jsx';
 
 function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {

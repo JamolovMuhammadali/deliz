@@ -8,10 +8,6 @@ import '../components/Contact.css'
 
 function Contact({NotifySucces,cartItems}) {
 
-    const [error, setError] = useState(null);
-    // const navigate = useNavigate();
-
-
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",

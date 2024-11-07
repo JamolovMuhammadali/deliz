@@ -10,7 +10,7 @@ import signupRightImg from '../assets/signupRight.png';
 function Signup({NotifyError, NotifySucces}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -22,7 +22,7 @@ function Signup({NotifyError, NotifySucces}) {
         navigate("/");
       }, 3000);
     } catch (error) {
-      setError(error.message);
+      // setError(error.message);
       NotifyError();
     }
   };
@@ -38,7 +38,7 @@ function Signup({NotifyError, NotifySucces}) {
         navigate("/"); 
       }, 3000);
     } catch (error) {
-      setError(error.message);
+      // setError(error.message);
       NotifyError();
     }
   };

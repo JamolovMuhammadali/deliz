@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 function Header({cartItems}) {
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation(); // Hook to get the current route
-    const cartItemsnum = 3;
+    // const cartItemsnum = 3;
 
     const toggleOpen = () => {
         setMenuOpen(true)
@@ -84,7 +84,7 @@ function Header({cartItems}) {
                     <div className="header-counter">
                         <MdOutlineShoppingCart />
                         <div className="header-counter-num">
-                            {cartItems.length === 0 ? (<p>0</p>) : (<sup>{cartItems.length}</sup>)}
+                            {cartItems.length === 0 ? (<small>0</small>) : (<small>{cartItems.length}</small>)}
                         </div>
                     </div>
                 </Link>
@@ -104,11 +104,11 @@ function Header({cartItems}) {
 
                     <button
                     onClick={() => toggleClose()}
-                    class="sidebar-close-btn bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+                    className="sidebar-close-btn bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
                     type="button"
                     >
                     <div
-                        class="bg-customOrange rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+                        className="bg-customOrange rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
                     >
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -126,11 +126,11 @@ function Header({cartItems}) {
                         ></path>
                         </svg>
                     </div>
-                    <p class="translate-x-2 text-customOrange">Go Back</p>
+                    <p className="translate-x-2 text-customOrange">Go Back</p>
                     </button>
    
 
-                <div className={` sidebar-link`}>
+                <div className={`sidebar-link`}>
                     <Link 
                         to='/' 
                         // onClick={() => setMenuOpen(false)} 

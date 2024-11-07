@@ -17,13 +17,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [showSuccessAlert, setShowSuccessAlert] = useState(false); // For success alert
-  const [showErrorAlert, setShowErrorAlert] = useState(false); // For error alert
 
   const addItemToCart = (item) => {
     console.log('Adding item to cart:', item);
     setCartItems([...cartItems, item]);
-    setShowSuccessAlert(true);
     };
 
     const NotifySucces = () => {
