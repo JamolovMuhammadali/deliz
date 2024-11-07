@@ -104,31 +104,6 @@
     background-color: #2e8b25;
 }
 
-.header-counter-button-rectangles {
-    width: 24px;
-    height: 24px;
-    background-color: rgb(255, 241, 241);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-
-.header-counter-button-rectangle {
-    width: 9px;
-    height: 9px;
-    border: 2px solid #311F09;
-    border-radius: 3px;
-}
-
-.header-counter-button-circle {
-    width: 9px;
-    height: 9px;
-    border: 2px solid #FF8A00;
-    border-radius: 50%;
-}
-
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -174,6 +149,8 @@
     /* padding: 20px; */
     z-index: 10;
     padding: 50px;
+    border: 4px solid #FF8A00;
+    border-radius: 4px;
   }
   
   /* Open the sidebar by changing its 'left' property */
@@ -195,8 +172,8 @@
 
 /* From Uiverse.io by vinodjangid07 */ 
 .setting-btn {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,9 +241,6 @@
 }
 
 @media (max-width: 967px) {
-    .header-counter-button-rectangles {
-        display: grid;
-    }
 
     .header-counter-button button {
         display: none;

@@ -12,6 +12,9 @@ function Header({cartItems}) {
         setMenuOpen(true)
     }
 
+    const toggleClose = () => {
+        setMenuOpen(false)
+    }
 
     // const toggleMenu = () => {
     //     setMenuOpen(!menuOpen);
@@ -95,18 +98,38 @@ function Header({cartItems}) {
                     <span className="bar bar2"></span>
                     <span className="bar bar1"></span>
                 </button>
-        
-                <div 
-                    className={`header-counter-button-rectangles`} 
-                >
-                    <div className="header-counter-button-rectangle"></div>
-                    <div className="header-counter-button-rectangle"></div>
-                    <div className="header-counter-button-rectangle"></div>
-                    <div className="header-counter-button-circle"></div>
-                </div>
             </div>
 
             <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
+
+                    <button
+                    onClick={() => toggleClose()}
+                    class="sidebar-close-btn bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+                    type="button"
+                    >
+                    <div
+                        class="bg-customOrange rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+                    >
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 1024 1024"
+                        height="205px"
+                        width="25px"
+                        >
+                        <path
+                            d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                            fill="#FFF"
+                        ></path>
+                        <path
+                            d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                            fill="#FFF"
+                        ></path>
+                        </svg>
+                    </div>
+                    <p class="translate-x-2 text-customOrange">Go Back</p>
+                    </button>
+   
+
                 <div className={` sidebar-link`}>
                     <Link 
                         to='/' 
@@ -152,6 +175,7 @@ function Header({cartItems}) {
                     </Link>
                 </div>
             </div>
+            
         </div>
     );
 }
