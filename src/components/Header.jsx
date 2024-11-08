@@ -70,13 +70,6 @@ function Header({cartItems}) {
                 >
                     Contact us
                 </Link>
-                <Link 
-                    to='/checkout' 
-                    // onClick={() => setMenuOpen(false)} 
-                    className={location.pathname === '/checkout' ? 'active-link' : ''}
-                >
-                    Checkout
-                </Link>
             </div>
 
             <div className="header-counter-button">
@@ -165,13 +158,6 @@ function Header({cartItems}) {
                         className={location.pathname === '/Contact' ? 'active-link' : ''}
                     >
                         Contact us
-                    </Link>
-                    <Link 
-                        to='/checkout' 
-                        // onClick={() => setMenuOpen(false)} 
-                        className={location.pathname === '/checkout' ? 'active-link' : ''}
-                    >
-                        Checkout
                     </Link>
                 </div>
             </div>

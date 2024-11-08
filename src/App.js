@@ -69,7 +69,7 @@ function App() {
           <Route path='/reservation' element={<Reservation cartItems={cartItems}  />} />
           <Route path='/contact' element={<Contact cartItems={cartItems}  NotifySucces={NotifySucces} />} />
           <Route path='/orderonline' element={<OrderOnline cartItems={cartItems}  NotifySucces={NotifySucces} addItemToCart={addItemToCart} />} />
-          <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} addItemToCart={addItemToCart} NotifySucces={NotifySucces} />} />
+          <Route path='/cart' element={<Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} NotifySucces={NotifySucces} NotifyError={NotifyError} />} />
           <Route path='/checkout' element={<Checkout cartItems={cartItems} removeItemFromCart={removeItemFromCart} />} />
         </Routes>
       </BrowserRouter>

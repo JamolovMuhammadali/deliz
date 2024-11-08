@@ -1,17 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Checkout.css';
 import Header from './Header';
 import Footer from './Footer';
 import { FaAngleLeft } from "react-icons/fa6";
 
 function Checkout({cartItems}) {
+  const navigate = useNavigate();
   return (
     <div className='wrap-checkout'>
       <Header cartItems={cartItems} />
       <div className="checkout">
 
-        <div className="checkout-title">
-          <button className="checkout-back"><FaAngleLeft /></button>
+       <div className="checkout-title">
+          <button onClick={()=>navigate('/Cart')} className="checkout-back"><FaAngleLeft /></button>
           <h1>Checkout</h1>
           <div className="checkout-hidden-btn"></div>
         </div>

@@ -1,31 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-// import MenuItems from './MenuItems.jsx';
 import Prompt from './Prompt.jsx';
 
-function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
+function Cart({ cartItems, removeItemFromCart, NotifySucces, NotifyError }) {
   const [showPrompt, setShowPrompt] = useState(false);
-  const [itemToRemove, setItemToRemove] = useState(null); // Track item to remove
+  const [itemToRemove, setItemToRemove] = useState(null);
+  const [vaucherCode, setVaucherCode] = useState(0); // Using state for VaucherCode
+  const inputRef = useRef("");
+  const navigate = useNavigate();
+
+  const handleVacher = (e) => {
+    e.preventDefault();
+    if (inputRef.current.value === "SA") {
+      setVaucherCode(-10); // Set the discount value in state
+      NotifySucces();
+    } else {
+      NotifyError();
+    }
+    inputRef.current.value = "";
+  };
 
   const handleConfirm = () => {
     if (itemToRemove !== null) {
-      removeItemFromCart(itemToRemove); // Remove item if confirmed
-      setItemToRemove(null); // Reset item
+      removeItemFromCart(itemToRemove);
+      setItemToRemove(null);
     }
     setShowPrompt(false);
   };
 
   const handleCancel = () => {
-    setItemToRemove(null); // Reset item if cancelled
+    setItemToRemove(null);
     setShowPrompt(false);
   };
 
   const requestRemoveItem = (index) => {
-    setItemToRemove(index); // Set item to remove
-    setShowPrompt(true); // Show prompt
+    setItemToRemove(index);
+    setShowPrompt(true);
   };
+
+  const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.price), 0) + vaucherCode; // Use vaucherCode state here
 
   return (
     <div className="cart-container">
@@ -45,11 +61,11 @@ function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
               {cartItems.map((item, index) => (
                 <li key={index}>
                   <b>{item.name}</b>
-                  <span>{item.price}</span>
+                  <span>${item.price}</span>
                   <img className="wrap-order-ul-img" src={item.image} alt="error in cart" />
                   <button
                     className="wrap-order-remove-btn"
-                    onClick={() => requestRemoveItem(index)} // Request confirmation
+                    onClick={() => requestRemoveItem(index)}
                   >
                     Remove
                   </button>
@@ -58,7 +74,31 @@ function Cart({ cartItems, removeItemFromCart, addItemToCart, NotifySucces }) {
             </ul>
           )}
         </div>
+        {cartItems.length === 0 ? (
+          <p></p>
+        ) : (
+          <div className="wrap-all-vacher">
+            <div className="wrap-vaucher-total-price">
+              <form>
+                <input ref={inputRef} type="text" placeholder="Vaucher Code..." />
+                <button type="button" onClick={handleVacher}>Submit</button>
+              </form>
+              <div className="total-price">
+                <h3>Total Price: <span>${totalPrice.toFixed(2)}</span></h3>
+              </div>
+            </div>  
+          </div>
+        )}
       </div>
+      {cartItems.length === 0 ? (
+        <p></p>
+      ):(
+        <div className="wrap-checkout-btn">
+          <button className='checkout-btn' onClick={() => navigate('/checkout')}>Checkout</button>
+        </div>
+      )}
+
+
       {showPrompt && (
         <Prompt
           message="Are you sure you want to remove this item from the cart?"
