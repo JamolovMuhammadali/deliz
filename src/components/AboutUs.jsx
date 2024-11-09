@@ -39,18 +39,20 @@ function AboutUs({cartItems}) {
                 </div>
 
                 <div className="about-own">
-                    <div className="about-own-hH1">
-                        <h1 className='about-restautant-right-h1'><span>Owner</span> & Executive Chef</h1>
-                    </div>
-                    <div className="about-own-left">
-                        <img src={AboutOwnerImg} alt="AboutOwnerImg" />
-                    </div>
-                    <div className="about-own-right">
-                        <h1 className='about-restautant-right-h1 about-own-right-h1'><span>Owner</span> & Executive Chef</h1>
-                        <h3>Ismail Marzuki</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
+    <div className="about-own-left">
+        <img src={AboutOwnerImg} alt="About Owner" />
+    </div>
+    <div className="about-own-right">
+        <h1 className="about-title">
+            <span className="highlight">Owner</span> & Executive Chef
+        </h1>
+        <h3 className="about-name">Ismail Marzuki</h3>
+        <p className="about-description">
+            <span className="quote">“</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span className="quote">”</span>
+        </p>
+    </div>
+</div>
+
             </div>
             <Footer />
         </div>

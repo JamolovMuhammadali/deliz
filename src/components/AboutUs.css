@@ -75,73 +75,95 @@
     display: none;
 }
 
+/* Container styling */
 .about-own {
-    width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    margin: 100px auto;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-.about-own-left {
-    width: 30%;
-}
-
+/* Image styling */
 .about-own-left img {
     width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
 }
 
-.about-own-right{
-    width: 50%;
-    text-align: center;
+/* Right section styling */
+.about-own-right {
+    max-width: 500px;
+    color: #4a3c2b;
 }
 
-.about-own-right h1 {
-    font-size: 60px;
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #4a3c2b;
 }
 
-.about-restautant-right-h1 span{
-    color: #FF8A00;
-    font-family: 'Tinos', serif;
+.highlight {
+    color: #d4903e; /* Orange-brown color for "Owner" text */
 }
 
-.about-own-right h3{
-    font-weight: 600;
-    font-size: 40px;
-    color: #000000;
-    margin: 20px 0;
+.about-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #4a3c2b;
 }
 
-.about-own-right p{
-    color: #5C4529;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 22px;
-    max-width: 495px;
+.about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a3c2b;
+    position: relative;
+    padding: 0 20px;
 }
 
-.about-own-hH1{
-    display: none;
+.quote {
+    font-size: 2rem;
+    color: #d4903e;
+    font-weight: bold;
+    vertical-align: text-top;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .about-own {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-own-left img {
+        max-width: 100%;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-name {
+        font-size: 1.5rem;
+    }
+
+    .about-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+
 
 @media(max-width: 967px) {
 
     .about-restautant-right-h1 {
         font-size: 50px;
-    }
-
-    .about-own-left {
-        width: 70%;
-        /* background-color: red; */
-    }
-
-    .about-own-right{
-        width: 100%;
-    }
-
-    .about-own-left img{
-        border-radius: 22px;
     }
 
     .about-sed-left{
@@ -152,21 +174,6 @@
         font-size: medium;
     }
 
-    .about-own-hH1{
-        display: block;
-    }
-
-    .about-own-right-h1{
-        display: none;
-    }
-
-    .about-own-right h3{
-        font-size: 20px;
-    }
-
-    .about-own-right p{
-        font-size: 16px;
-    }
 }
 
 @media(max-width: 967px) {
@@ -178,9 +185,7 @@
         display: none;
     }
 
-    .about-own{
-        flex-direction: column;
-    }
+
 
     .about-restautant-right {
         width: 100%;
