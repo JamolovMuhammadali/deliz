@@ -8,7 +8,7 @@ import Prompt from './Prompt.jsx';
 function Cart({ cartItems, removeItemFromCart, NotifySucces, NotifyError }) {
   const [showPrompt, setShowPrompt] = useState(false);
   const [itemToRemove, setItemToRemove] = useState(null);
-  const [vaucherCode, setVaucherCode] = useState(0); // Using state for VaucherCode
+  const [vaucherCode, setVaucherCode] = useState(0); // Using state for Voucher Code
   const inputRef = useRef("");
   const navigate = useNavigate();
 
@@ -25,10 +25,14 @@ function Cart({ cartItems, removeItemFromCart, NotifySucces, NotifyError }) {
 
   const handleConfirm = () => {
     if (itemToRemove !== null) {
-      removeItemFromCart(itemToRemove);
+      removeItemFromCart(itemToRemove); // Remove specific item
       setItemToRemove(null);
     }
     setShowPrompt(false);
+  };
+
+  const deleteAll = () => {
+    removeItemFromCart(null); // Clear the entire cart
   };
 
   const handleCancel = () => {
@@ -41,7 +45,7 @@ function Cart({ cartItems, removeItemFromCart, NotifySucces, NotifyError }) {
     setShowPrompt(true);
   };
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.price), 0) + vaucherCode; // Use vaucherCode state here
+  const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.price), 0) + vaucherCode; // Use voucherCode state here
 
   return (
     <div className="cart-container">
@@ -74,30 +78,26 @@ function Cart({ cartItems, removeItemFromCart, NotifySucces, NotifyError }) {
             </ul>
           )}
         </div>
-        {cartItems.length === 0 ? (
-          <p></p>
-        ) : (
+        {cartItems.length !== 0 && (
           <div className="wrap-all-vacher">
             <div className="wrap-vaucher-total-price">
               <form>
-                <input ref={inputRef} type="text" placeholder="Vaucher Code..." />
+                <input ref={inputRef} type="text" placeholder="Voucher Code..." />
                 <button type="button" onClick={handleVacher}>Submit</button>
               </form>
               <div className="total-price">
                 <h3>Total Price: <span>${totalPrice.toFixed(2)}</span></h3>
               </div>
-            </div>  
+            </div>
+            <button onClick={deleteAll} className='cart-delete-all'>Delete All</button>
           </div>
         )}
       </div>
-      {cartItems.length === 0 ? (
-        <p></p>
-      ):(
+      {cartItems.length !== 0 && (
         <div className="wrap-checkout-btn">
           <button className='checkout-btn' onClick={() => navigate('/checkout')}>Checkout</button>
         </div>
       )}
-
 
       {showPrompt && (
         <Prompt

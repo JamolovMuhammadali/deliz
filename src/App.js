@@ -50,12 +50,19 @@ function App() {
   
 
   const removeItemFromCart = (index) => {
-    const updatedCart = [
-      ...cartItems.slice(0, index),
-      ...cartItems.slice(index + 1),
-    ];
-    setCartItems(updatedCart);
+    if (index === null) {
+      // Clear the entire cart
+      setCartItems([]);
+    } else {
+      // Remove the item at the given index
+      const updatedCart = [
+        ...cartItems.slice(0, index),
+        ...cartItems.slice(index + 1),
+      ];
+      setCartItems(updatedCart);
+    }
   };
+  
 
   return (
     <div className="App">
